@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Motivational Quote Machine</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fbd3e9, #bb377d);
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #quote-box {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    #quote {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    #author {
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #ff4081;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #f50057;
+    }
+
+    a {
+      display: block;
+      margin-top: 40px;
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="quote-box">
+    <div id="quote">Click below for motivation!</div>
+    <div id="author"></div>
+    <button onclick="generateQuote()">Inspire Me</button>
+  </div>
+
+  <a href="scratch.html">Back to Scratch Page</a>
+
+  <script>
+    const quotes = [
+      { quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+      { quote: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+      { quote: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", author: "Ralph Waldo Emerson" },
+      { quote: "It always seems impossible until it’s done.", author: "Nelson Mandela" },
+      { quote: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe" },
+      { quote: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" }
+    ];
+
+    function generateQuote() {
+      const random = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quote").textContent = quotes[random].quote;
+      document.getElementById("author").textContent = "- " + quotes[random].author;
+    }
+  </script>
+
+</body>
+</html>
